@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Extraction Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h2 {
+            color: #00c853;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table thead {
+            background: #00c853;
+            color: black;
+        }
+
+        .table tbody tr {
+            transition: 0.3s ease-in-out;
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(0, 200, 83, 0.2);
+            transform: scale(1.02);
+        }
+
+        .table td, .table th {
+            padding: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Keyword Extraction Results</h2>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Keyword</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for keyword, score in keywords.items() %}
+                <tr>
+                    <td>{{ keyword }}</td>
+                    <td>{{ score }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
